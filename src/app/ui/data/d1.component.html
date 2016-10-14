@@ -1,0 +1,117 @@
+
+<!-- Toggle Templates
+------------------------------------------------------------------------------->
+<div class="well" (click)="openCmp()" *ngIf=" getToggleType() !== 'button' ">
+    <button *ngIf="label" class="btn btn-link btn-block"> 
+        <i *ngIf="icon" class="fa fa-{{ icon }}"></i> 
+        <b *ngIf=" !getPipe() ">{{ label }}</b> 
+        <b *ngIf=" getPipe() === 'decamel' ">{{ label | decamel }}</b> 
+        <i class="fa fa-caret-down"></i> 
+    </button>
+    <div class="alert alert-warning alert-dismissible alert-selections" *ngFor=" let selection of selections ">
+        <button type="button" class="close" (click)="undoSelection(selection, $event)"> 
+            <i class="fa fa-close"></i> 
+        </button>
+        <b *ngIf=" !getPipe() ">{{ selection.value }}</b>
+        <b *ngIf=" getPipe() === 'decamel' ">{{ selection.value | decamel }}</b>
+    </div>
+</div>
+
+
+
+<button #btn (click)=openCmp() class="btn btn-default" *ngIf=" getToggleType() === 'button' "> 
+    <i *ngIf="icon" class="fa fa-{{ icon }}" aria-hidden="true"></i> 
+    <span *ngIf=" !getPipe() ">{{ label }}</span> 
+    <span class="badge" *ngIf=" getMenuType() !== 'radio' "> 
+        {{ selections.length }} 
+    </span>
+    <template [ngIf]=" getMenuType() === 'radio' "> 
+        <span class="badge" *ngFor=" let selection of selections "> 
+            <b *ngIf=" !getPipe() ">{{ selection.value }}</b> 
+            <b *ngIf=" getPipe() === 'decamel' ">{{ selection.value | decamel }}</b> 
+        </span> 
+    </template> 
+    <i class="fa fa-caret-down"></i>
+</button>
+
+
+
+
+<!-- Menu Template
+------------------------------------------------------------------------------->
+<div #menu class="menu panel panel-default">
+    
+    <!-- Filter Template
+    ----------------------------------->    
+    <div class="panel-heading">
+        <div class="btn-group">
+            <button class="btn btn-close btn-danger" (click)="closeCmp()"> <i class="fa fa-close fa-lg"></i> </button>
+        </div>
+        <h3 class="panel-title">
+            {{ label }}
+            <span class="badge" *ngIf=" getMenuType() !== 'radio' "> {{ selections.length }} </span>      
+            <template [ngIf]=" getMenuType() === 'radio' " >        
+                <span class="badge" *ngFor=" let selection of selections "> {{ selection.value }} </span>     
+            </template>    
+        </h3> 
+    </div>
+
+
+
+    <div class="panel-body">
+
+        <!-- Filter Template
+        ----------------------------------->    
+        <div class="panel-toolbar">
+            <div class="input-group"> 
+                <span class="input-group-addon">          
+                    <i class="fa fa-search fa-lg"></i>        
+                </span>
+                <input #filterInput (keyup)="filter(filterInput.value)" type="text" class="form-control" placeholder="Search...">
+                <div class="input-group-btn" *ngIf=" getFilterSelection() !== 'off' ">
+                    <button (click)="handleFilter('select')" class="btn btn-success" *ngIf=" getMenuType() !== 'radio' "> 
+                        <i class="fa fa-plus-square-o fa-lg"></i> 
+                        <span>Select all</span> 
+                    </button>
+                    <button (click)=" handleFilter('deselect') " class="btn btn-danger">
+                        <i class="fa fa-minus-square-o fa-lg"></i> 
+                        <span>Deselect all</span> 
+                    </button>
+                    <button class="btn btn-primary" (click)="infoClick()"> 
+                        <i class="fa fa-info fa-lg"></i> 
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- List Template
+        ----------------------------------->            
+        <div class="panel-list">
+            <ul #list class="list-group">
+                <li #listItem *ngFor="let item of items" class="list-group-item" id="{{ getValue(item) }}">
+                    <label class="{{ getMenuType() }}">
+                        <input #check type="{{ getMenuType() }}" value="{{ item }}" (click)="checkClick($event)"> 
+                        <span *ngIf=" !getPipe() ">{{ item }}</span>
+                        <span *ngIf=" getPipe() === 'decamel' ">{{ item | decamel }}</span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Selections Template
+        ----------------------------------->            
+        <div class="panel-selections">
+            <div class="alert alert-warning alert-dismissible alert-selections" *ngFor=" let selection of selections ">
+                <button type="button" class="close" (click)="undoSelection(selection, $event)"> 
+                    <i class="fa fa-close"></i> 
+                </button>
+                <b *ngIf=" !getPipe() ">{{ selection.value }}</b>
+                <b *ngIf=" getPipe() === 'decamel' ">{{ selection.value | decamel }}</b>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="backdrop" #backdrop (click)="closeCmp()"></div>

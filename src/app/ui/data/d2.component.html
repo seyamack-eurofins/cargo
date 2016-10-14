@@ -1,0 +1,37 @@
+<div #wrapper>
+    <div ez-row class="d2row">
+        <div ez-col class="first-col"> <span class="badge header">{{ firstKey | decamel }}</span> </div>
+        <div ez-col class="rest-col">
+            <div ez-row>
+                <div ez-col #col *ngFor=" let viewKey of restViewKeys; let idx = index " [attr.data-index]="idx" class="rest-cell">
+                    <div ez-d1 
+                        index="{{ idx }}" 
+                        btn="link" 
+                        [menu-items]="datasetKeys" 
+                        preselected="{{ viewKey }}" 
+                        menu-type="radio" 
+                        toggle-type="button" 
+                        (emitter)="d1Emitter($event)" 
+                        filter-selection="off" 
+                        pipe="decamel"
+                    ></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ez-row *ngFor=" let firstItem of firstColumnItems; let rowIndex = index " class="d2row">
+        <div ez-col class="first-col">
+            
+            <button ez-btn *ngIf="link" [routerLink]="[firstItem]" look="xs primary" (click)="onNav(firstItem)" [label]="firstItem" icon="chevron-right"></button> 
+            <b *ngIf="!link">{{ firstItem }} </b>
+
+        </div>
+        <div ez-col class="rest-col">
+            <div ez-row>
+                <div ez-col sm="2" #cell *ngFor=" let viewKey of restViewKeys; let idx = index " [attr.data-index]="idx" class="rest-cell"> 
+                    {{ dataset[rowIndex][viewKey] }} 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

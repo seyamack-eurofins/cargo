@@ -1,0 +1,31 @@
+<ol class="breadcrumb">
+    <li><a [routerLink]="['/']" ez-btn look="primary" icon="home"></a></li>
+</ol>
+<div ez-row>
+    <div ez-col sm="6" md="4" lg="3">
+        <div ez-wrap look="primary" title="Invoices" icon="file-text">
+            <div ez-d1 [menu-items]="months" icon="filter" label="Invoicing Period" class="block"></div>            
+            <hr>
+            <ez-obj [obj]="invoiceTotals"></ez-obj>
+            <hr>
+            <ez-obj [obj]="invoiceStatuses"></ez-obj>
+            <hr>
+            <ez-obj [obj]="invoiceStates"></ez-obj>
+            <hr>
+            <button ez-btn icon="upload" look="warning"></button>
+            <button ez-btn [routerLink]="['/invoices']" look="primary" icon="chevron-right"></button>
+        </div>
+    </div>
+    
+    
+    
+    <div ez-col sm="6" md="4" lg="3">
+        <div ez-wrap look="info" title="Shipments" icon="cubes">
+            <div ez-d1 [menu-items]="months" icon="filter" label="Registration Period" class="block"></div>
+            <hr>
+            <ez-obj [obj]="shipmentStatuses"></ez-obj>
+            <hr>
+            <button ez-btn [routerLink]="['/shipments']" look="primary" icon="chevron-right"></button>
+        </div>
+    </div>
+</div>

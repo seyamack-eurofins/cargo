@@ -1,0 +1,16 @@
+<template ngFor let-item [ngForOf]="items" let-i="index" *ngIf=" getMode() === 'checkbox' ">
+    <div class="checkbox {{ getLook() }}">
+        <label>
+            <input #check type="checkbox" name="{{ name }}" value="{{ item }}" (change)="onChange($event, check)" /> 
+            {{ item }}
+        </label>
+    </div>
+</template>
+<template ngFor let-item [ngForOf]="items" let-i="index" *ngIf=" getMode() === 'radio' ">
+    <div class="radio {{ getLook() }}">
+        <label>
+            <input #check type="radio" name="{{ name }}" value="{{ item }}" (change)="onChange($event, check)" /> 
+            {{ item }}
+        </label>
+    </div>
+</template>

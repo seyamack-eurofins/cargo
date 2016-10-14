@@ -1,0 +1,13 @@
+<div ez-row>
+    <div ez-col sm="6" md="4" lg="3">
+        <div ez-wrap title="Invoice Summary" icon="sticky-note-o" look="info">
+            <ez-obj [obj]="invoice"></ez-obj> 
+            <button ez-btn look="success" label="Approve" icon="check"></button> 
+        </div>
+    </div>
+    <div ez-col md="8" lg="9">
+        <div ez-wrap title="Charges" look="primary" icon="euro">
+            <div ez-d2 [model]="charges" link="awbNr"></div>
+        </div>
+    </div>
+</div>

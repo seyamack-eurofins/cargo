@@ -1,0 +1,136 @@
+.first-col {
+    width: 10%;
+}
+.rest-col {
+    width: 90%;
+}
+.rest-cell {
+    width: 11.111111%;
+}
+/* 1900+ */
+.hide-9 .first-col {
+    width: 11.111111%;
+}
+.hide-9 .rest-col {
+    width: 88.888889%;
+}
+.hide-9 .rest-cell {
+    width: 12.5%;
+}
+.hide-9 .rest-cell[data-index="8"] {
+    display: none;
+}
+/* 1700 - 1900 */
+
+.hide-8 .first-col {
+    width: 12.5%;
+}
+.hide-8 .rest-col {
+    width: 87.5%;
+}
+.hide-8 .rest-cell {
+    width: 14.2857143%;
+}
+.hide-8 .rest-cell[data-index="7"] {
+    display: none;
+}
+/* 1500 - 1700 */
+
+.hide-7 .first-col {
+    width: 14.2857143%;
+}
+.hide-7 .rest-col {
+    width: 85.7142857%;
+}
+.hide-7 .rest-cell {
+    width: 16.666666%;
+}
+.hide-7 .rest-cell[data-index="6"] {
+    display: none;
+}
+/* 1300 - 1500 */
+
+.hide-6 .first-col {
+    width: 16.666666%;
+}
+.hide-6 .rest-col {
+    width: 83.333333%;
+}
+.hide-6 .rest-cell {
+    width: 20%;
+}
+.hide-6 .rest-cell[data-index="5"] {
+    display: none;
+}
+/* 1100 - 1300 */
+
+.hide-5 .first-col {
+    width: 20%;
+}
+.hide-5 .rest-col {
+    width: 80%;
+}
+.hide-5 .rest-cell {
+    width: 25%;
+}
+.hide-5 .rest-cell[data-index="4"] {
+    display: none;
+}
+/* 900 - 1100 */
+
+.hide-4 .first-col {
+    width: 25%;
+}
+.hide-4 .rest-col {
+    width: 75%;
+}
+.hide-4 .rest-cell {
+    width: 33.333333%;
+}
+.hide-4 .rest-cell[data-index="3"] {
+    display: none;
+}
+/* 700 - 900 */
+
+.hide-3 .first-col {
+    width: 33.333333%;
+}
+.hide-3 .rest-col {
+    width: 66.666666%;
+}
+.hide-3 .rest-cell {
+    width: 50%;
+}
+.hide-3 .rest-cell[data-index="2"] {
+    display: none;
+}
+/* 500- */
+
+.hide-2 .first-col {
+    width: 50%;
+}
+.hide-2 .rest-col {
+    width: 50%;
+}
+.hide-2 .rest-cell {
+    width: 100%;
+}
+.hide-2 .rest-cell[data-index="1"] {
+    display: none;
+}
+
+span.badge.header {
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #e51c23;
+}
+.d2row {
+    border-top: 1px solid #DDD;
+    padding: 5px 0;
+}
+.d2row:first-child {
+    background: #EEE;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+}

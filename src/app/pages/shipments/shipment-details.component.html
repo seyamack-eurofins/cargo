@@ -1,0 +1,25 @@
+<div ez-row>
+    <div ez-col sm="6" md="4" lg="3">
+        <div ez-wrap title="Shipment Summary" icon="sticky-note-o" look="info">
+            <ez-obj [obj]="shipment"></ez-obj>
+        </div>
+    </div>
+    <div ez-col sm="6" md="4" lg="3">
+        <div ez-wrap title="Costs Overview" icon="euro" look="warning">
+            <ez-obj [obj]="costs"></ez-obj>
+        </div>
+    </div>
+    <div ez-col sm="6" md="4" lg="3"> </div>
+</div>
+<div ez-row>
+    <div ez-col lg="6">
+        <div ez-wrap title="Shipment Allocations" look="warning" icon="pie-chart">
+            <div ez-d2 [model]="allocations"></div>
+        </div>
+    </div>
+    <div ez-col lg="6">
+        <div ez-wrap title="Shipment Charges" look="primary" icon="euro">
+            <div ez-d2 [model]="charges"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<button ez-btn [label]="label" [icon]="icon" [look]="look" (click)="open()"></button>
+<div #fly class="fly {{ getDirection() }} ">
+    <div #panel class="panel panel-default">
+        <div class="panel-heading">
+            <h1 class="panel-title" *ngIf="getTitle()">
+                <i *ngIf="icon" class="fa fa-{{ icon }}" aria-hidden="true"></i>
+                {{ getTitle() }}
+            </h1>
+        </div>
+        <div class="panel-closer" (click)="close()"> 
+            <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+        </div>
+        <div class="panel-body">
+            <template [ngIf]="nav">
+                <div class="list-group">
+                    <a *ngFor=" let key of navKeys " class="list-group-item" [routerLink]="[nav[key]]" (click)="onNav()">
+                        {{ key }}
+                        <i class="fa fa-chevron-right pull-right"></i>
+                    </a>
+                </div>
+            </template>
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>
+<div #backdrop class="backdrop" (click)="close()"></div>

@@ -1,0 +1,193 @@
+.menu {
+    position: fixed;
+    left: 0;
+    top: -100%;
+    right: 0;
+    width: 500px;
+    height: 75%;
+    margin: 5% auto;
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.45s ease-in;
+}
+.menu.open {
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.panel-heading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+}
+.panel-body {
+    position: absolute;
+    padding: 0;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f6f6f6;
+}
+.panel-toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    height: 50px;
+}
+.panel-list {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: auto;
+    padding: 10px;
+    margin: 0;
+    transition: all 350ms ease-in;
+}
+.panel-selections {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    overflow: auto;
+    padding: 10px;
+    background: #f6f6f6;
+    transition: all 350ms ease-in;
+}
+.menu.has-info .panel-selections {
+    visibility: visible;
+    opacity: 1;
+    width: 200px;
+}
+.menu.has-info .panel-list {
+    right: 200px;
+}
+@media all and (max-width: 500px) {
+    .menu {
+        width: 320px;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .menu.has-info .panel-selections {
+        width: 50%;
+    }
+    .menu.has-info .panel-list {
+        right: 50%;
+    }
+}
+.panel-heading {
+    padding: 0;
+}
+.panel-heading > .btn-group {
+    float: right;
+}
+.panel-heading > .btn-group > .btn {
+    height: 50px;
+    width: 50px;
+}
+.panel-heading .panel-title {
+    font-size: 30px;
+    font-weight: 100;
+    float: left;
+    padding: 8px 10px;
+}
+.panel-heading .panel-title .badge {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 15px;
+    margin-top: -5px;
+}
+@media all and (max-width: 500px) {
+    .input-group-btn .btn span {
+        display: none;
+    }
+    .panel-heading .panel-title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .btn > * {
+        float: left;
+        margin-right: 3px;
+    }
+}
+.list-group-item {
+    padding: 0;
+}
+label.radio,
+label.checkbox {
+    padding-left: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+li:hover label {
+    background: #EEE;
+}
+input:focus:after {
+    box-shadow: inset 0px 0px 7px 2px #2196f3;
+    border-width: 1px;
+}
+.alert-selections {
+    padding: 3px 5px;
+    padding-right: 25px;
+    margin: 0;
+    margin-bottom: 5px;
+    position: relative;
+}
+.alert-selections .close {
+    font-size: 20px;
+    padding: 2px 3px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #d9534f;
+    opacity: 1;    
+}
+.alert-selections p {
+    font-size: 16px;
+    line-height: 1.1;
+}
+.well {
+    position: relative;
+    background: #EEE;
+    box-shadow: inset 1px 2px 7px 0px #CCC;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    min-width: 150px;
+    overflow-y: auto;
+    cursor: pointer;
+    border: none;
+}
+.well .alert-selections {
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.45s ease;
+}
+.backdrop.open {
+    visibility: visible;
+    opacity: 0.7;
+}

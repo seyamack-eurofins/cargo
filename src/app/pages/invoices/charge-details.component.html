@@ -1,0 +1,31 @@
+<div class="row">
+    <div ez-col sm="6" md="4" lg="3">
+        <div ez-wrap title="Charge Summary" icon="sticky-note-o" look="info">
+            <ez-obj [obj]="charge"></ez-obj>
+        </div>
+    </div>
+    <div ez-col sm="6" md="4" lg="3">
+        <div ez-wrap title="Costs Overview" icon="euro" look="warning">
+            <ez-obj [obj]="costs"></ez-obj>
+            <hr>
+            <div ez-wrap type="well">
+                <h5 class="row"> <span class="label label-primary col-xs-6">Total ex VAT</span>
+                    <div class="col-xs-6"> <i class="fa fa-euro"></i> 500.- </div>
+                </h5>
+                <h5 class="row"> <span class="label label-warning col-xs-6">Total VAT</span>
+                    <div class="col-xs-6"> <i class="fa fa-euro"></i> 100.- </div>
+                </h5>
+                <h5 class="row"> <span class="label label-danger col-xs-6">Total Cost</span>
+                    <div class="col-xs-6"> <i class="fa fa-euro"></i> 600.- </div>
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div ez-col>
+        <div ez-wrap title="Allocations" look="primary" icon="pie-chart">
+            <div ez-d2 [model]="allocations"></div>
+        </div>
+    </div>
+</div>

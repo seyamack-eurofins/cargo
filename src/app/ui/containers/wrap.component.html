@@ -1,0 +1,10 @@
+<div *ngIf="title" class="{{ type }}-heading">
+    <h3 class="{{ type }}-title">
+        <i *ngIf="icon" class="fa fa-{{ icon }}" aria-hidden="true"></i>
+        {{ title }}
+    </h3>
+</div>
+<img *ngIf="img" src="{{ img }}" alt="">
+<div class="{{ type }}-body">
+    <ng-content></ng-content>
+</div>

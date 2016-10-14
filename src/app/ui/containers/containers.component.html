@@ -1,0 +1,64 @@
+<h3>EZ Row & EZ Col</h3>
+<div ez-row>
+    <div ez-col sm="6">
+        <p>tag: div</p>
+        <p>directive: ez-row</p>
+        <hr>
+        <p>tag: div</p>
+        <p>directive: ez-col</p>
+        <p>attributes: xs, sm, md, lg</p>
+        <hr>
+        <p>xs: number range between 1 and 12 (12 by default)</p>
+        <p>sm: number range between 1 and 12</p>
+        <p>md: number range between 1 and 12</p>
+        <p>lg: number range between 1 and 12</p>
+    </div>
+    <div ez-col sm="6">
+        <div ez-row>
+            <div ez-col xs="6" sm="6" style="border:1px solid #CCC">
+                <p>Column 1</p>
+            </div>
+            <div ez-col xs="6" sm="6" style="border:1px solid #CCC">
+                <p>Column 2</p>
+            </div>
+        </div>
+    </div>
+</div>
+<h3>EZ Fly</h3>
+<div ez-row>
+    <div ez-col sm="6">
+        <p>tag: ez-fly</p>
+        <p>attributes: btn-label, panel-title, look, icon</p>
+        <hr>
+        <p>direction: (default) left, right, top, bottom</p>
+        <p>btn-label: string, label for the toggle btn.</p>
+        <p>panel-title: string, title of panel.</p>
+        <p>look: primary, info, success, warning, danger, (btn only) lg, sm, block</p>
+        <p>icon: string, fontawesome icon</p>
+    </div>
+    <div ez-col sm="6">
+        <ez-fly direction="top" btn-label="Fly Top" look="primary" icon="star"></ez-fly>
+        <ez-fly direction="bottom" btn-label="Fly Bottom" panel-title="Main Menu" look="info" icon="bars"></ez-fly>
+        <ez-fly direction="right" btn-label="Fly Right" panel-title="Other Menu" look="warning" icon="bars"></ez-fly>
+        <ez-fly look="success" icon="bars" btn-label="Fly Left"></ez-fly>
+    </div>
+</div>
+<h3>EZ Wrap</h3>
+<div ez-row>
+    <div ez-col sm="6">
+        <p>tag: div</p>
+        <p>directive: ez-wrap</p>
+        <p>attributes: type, title, icon, look, img</p>
+        <hr>
+        <p>type: string, panel, thumbnail, well</p>
+        <p>title: string, free text</p>
+        <p>icon: string, fontawesome icon</p>
+        <p>look: string space separated, primary, info, warning, success, danger</p>
+        <p>img: string, image path</p>
+    </div>
+    <div ez-col sm="6">
+        <div ez-wrap type="panel" title="My Panel" icon="star" look="primary"> content </div>
+        <div ez-wrap type="well" title="My Well" icon="star" look="primary"> content </div>
+        <div ez-wrap type="thumbnail" title="My Thumb" icon="star" look="primary"> content </div>
+    </div>
+</div>

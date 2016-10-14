@@ -1,0 +1,37 @@
+<h3>EZ Button</h3>
+<div ez-row>
+    <div ez-col sm="6">
+        <p>tag: button</p>
+        <p>directive: ez-btn</p>
+        <p>attributes: look, label, icon</p>
+        <hr>
+        <p>look: primary, info, success, warning, danger, lg, sm, block</p>
+        <p>label: string</p>
+        <p>icon: fontawesome icon string</p>
+    </div>
+    <div ez-col sm="6">
+        <button ez-btn look="lg" label="Large Default" icon="star"></button>
+        <button ez-btn look="primary lg" label="Large Primary" icon="star"></button>
+        <button ez-btn look="info" label="Info" icon="star"></button>
+        <button ez-btn look="success" label="Success" icon="star"></button>
+        <button ez-btn look="warning sm" label="Small Warning" icon="star"></button>
+        <button ez-btn look="danger sm" label="Small Danger" icon="star"></button>
+    </div>
+</div>
+<h3>EZ Check</h3>
+<div ez-row>
+    <div ez-col sm="6">
+        <p>tag: div</p>
+        <p>directive: ez-check</p>
+        <p>attributes: items, mode, name, look</p>
+        <hr>
+        <p>items: string comma separated, string array data binding</p>
+        <p>mode: checkbox(default), radio</p>
+        <p>name: string, if left empty it defaults to [mode_randomnumber: radio_123456]</p>
+        <p>look: primary, info, success, warning, danger, lg, sm, block</p>
+    </div>
+    <div ez-col sm="6">
+        <div ez-check [items]="countries" mode="radio" name="countries" look="primary lg block"></div>
+        <div ez-check items="Voetbal, Basketbal, Badminton"></div>
+    </div>
+</div>

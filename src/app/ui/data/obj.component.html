@@ -1,0 +1,30 @@
+ 
+  <template [ngIf]="!firstLink">
+    <div class="row" *ngFor=" let key of keys ">
+      <div class="col-sm-6">
+        <b>{{ key | decamel }}</b>
+      </div>
+      <div class="col-sm-6">
+        {{ obj[key] }}
+      </div>
+    </div>
+ </template>
+
+ <template [ngIf]="firstLink">
+    <div class="row">
+      <div class="col-sm-6">
+        <b>{{ firstKey | decamel }}</b>
+      </div>
+      <div class="col-sm-6">
+        <button ez-btn look="xs" [label]="firstValue" icon="chevron-right" (click)="onNav()"></button>
+      </div>
+    </div>
+    <div class="row" *ngFor=" let key of keys ">
+      <div class="col-sm-6">
+        <b>{{ key | decamel }}</b>
+      </div>
+      <div class="col-sm-6">
+        {{ obj[key] }}
+      </div>
+    </div>
+  </template>  
